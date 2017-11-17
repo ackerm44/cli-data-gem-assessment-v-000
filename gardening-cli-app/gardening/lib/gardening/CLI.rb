@@ -4,6 +4,7 @@ module Gardening
     def welcome
       puts "Welcome to the Vegetable and Herb Gardening Information App"
       puts ""
+      #Scraper.new.scrape_vegetable_list_page("http://www.growinganything.com/vegetable-planting-guide.html")
       menu
     end
 
