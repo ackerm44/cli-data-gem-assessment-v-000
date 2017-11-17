@@ -49,12 +49,11 @@ module Gardening
 
       vegetable_profile_hash
 
-      binding.pry
-
     end
 
 
   end
 end
 
+Gardening::Scraper.scrape_vegetable_list_page("http://www.growinganything.com/vegetable-planting-guide.html")
 Gardening::Scraper.scrape_vegetable_page("http://www.growinganything.com/growing-hops.html")
