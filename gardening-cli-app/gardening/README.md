@@ -2,17 +2,30 @@ First to-do list
 1.  DONE Create classes - CLI, scraper, gardening
 2.  DONE Scraper - Access the info for the list of vegetables & herbs
 3.  DONE (but needs more attention) Scraper - Access each individual vegetable and herbs
-4.  Gardening - Creates instances of each vegetable and put into an @@all array
+4.  DONE (but check that this is working properly) Gardening - Creates instances of each vegetable and put into an @@all array
 5.  DONE bin/console or other - Executable file, Create
 6.  DONE Executable file - require/environment file
 7.  DONE Executable file - calls a new instance of CLI class and runs through start or like method
-8.  CLI - Create a welcome and menu
+8.  DONE CLI - Create a welcome and menu
 
+Second to-do list
+**Screen record**
+**Commit and commit often**
+1. CLI - utilize user input to print all vegetables or vegetables by letter
+2. CLI - utilize user input to print an individual vegetable
+3. CLI - ask user if they would like to see another vegetable, repeat loop
+4. Scraper - fix vegetable scraping
+5. Scraper - edit vegetables that are found under a sub-list
+6. Vegetable - Make sure that attributes are being attributed correctly.  
+7. Vegetable - Look at prior examples to make sure nothing is being missed
+8. Overall - Make sure that all files are linked correctly
 
-
-
-
-
+Third to-do list
+1.  Write out instructions of how a user will use
+2.  Edit readme to reflect how the user will use
+3   spec.md, check off items
+4.  Video Demo
+5.  Blog post
 
 
 # Gardening

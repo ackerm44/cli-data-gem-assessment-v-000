@@ -29,6 +29,7 @@ module Gardening
       # "Grab list of vegetables from Vegetable class @@all based on the input and print them in a numbered list"
       puts "1. Radishes"
       puts "2. Rhubarb"
+      puts ""
 
     end
 
