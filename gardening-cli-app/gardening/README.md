@@ -1,11 +1,11 @@
 First to-do list
 1.  DONE Create classes - CLI, scraper, gardening
-2.  Scraper - Access the info for the list of vegetables & herbs
-3.  Scraper - Access each individual vegetable and herbs
+2.  DONE Scraper - Access the info for the list of vegetables & herbs
+3.  DONE (but needs more attention) Scraper - Access each individual vegetable and herbs
 4.  Gardening - Creates instances of each vegetable and put into an @@all array
 5.  DONE bin/console or other - Executable file, Create
 6.  DONE Executable file - require/environment file
-7.  Executable file - calls a new instance of CLI class and runs through start or like method
+7.  DONE Executable file - calls a new instance of CLI class and runs through start or like method
 8.  CLI - Create a welcome and menu
 
 

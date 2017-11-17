@@ -6,7 +6,7 @@ require "nokogiri"
 require_relative "gardening/version"
 require_relative "gardening/CLI"
 require_relative "gardening/scraper"
-require_relative "gardening/gardening"
+require_relative "gardening/vegetable"
 
 module Gardening
   # Your code goes here...

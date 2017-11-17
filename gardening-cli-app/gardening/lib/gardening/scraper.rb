@@ -7,7 +7,7 @@ module Gardening
 
     def self.scrape_vegetable_list_page(list_url)
 
-
+      #add url for each vegetable from veg list
 
       doc = Nokogiri::HTML(open(list_url))
 
@@ -30,14 +30,26 @@ module Gardening
 
 
       intro = doc.css("div#ContentColumn div.Liner p").first.text
-      varities = doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]").first.text  #remove recommended varities and :
-      cold_tolerance = doc.css("div#ContentColumn div.Liner div.snapshot ul li[4]").first.text #same
+      varities = doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]").first.text
+      cold_tolerance = doc.css("div#ContentColumn div.Liner div.snapshot ul li[4]").first.text
       sun = doc.css("div#ContentColumn div.Liner div.snapshot ul li[5]").first.text  #may not list correctly (sun ommited from some listings)
-      soil_ph = doc.css(("div#ContentColumn div.Liner div.snapshot ul li[1]")[2]).text
-      soil_temp = doc.css(("div#ContentColumn div.Liner div.snapshot ul li[2]")[2]).text
-      harvest = doc.css("div#ContentColumn div.Liner div.snapshot ul li").last.text
-      notes = doc.css("div#ContentColumn div.Liner p")[2].text
+      #soil_ph = doc.css(("div#ContentColumn div.Liner div.snapshot ul li[1]")[2]).text
+      #soil_temp = doc.css(("div#ContentColumn div.Liner div.snapshot ul li[2]")[2]).text
+      harvest = doc.css("div#ContentColumn div.Liner div.snapshot ul li").last.text #may not display correctly
+      notes = doc.css("div#ContentColumn div.Liner p")[2].text  #may be including some additional characters that need to be parsed.
 
+      vegetable_profile_hash = {
+        :intro => intro,
+        :recommended_varities => varities,
+        :cold_tolerance => cold_tolerance,
+        :sun => sun,
+        :harvest_time => harvest,
+        :notes => notes
+      }
+
+      vegetable_profile_hash
+
+      binding.pry
 
     end
 
@@ -45,4 +57,4 @@ module Gardening
   end
 end
 
-Gardening::Scraper.scrape_vegetable_page("http://www.growinganything.com/planting-garlic.html")
+Gardening::Scraper.scrape_vegetable_page("http://www.growinganything.com/growing-hops.html")
