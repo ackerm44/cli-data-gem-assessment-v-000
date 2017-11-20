@@ -10,7 +10,7 @@ module Gardening
 
     def menu
       puts "Type the first letter of the vegetable or herb you are looking for more information on."
-      puts "Or type list to see the whole list of vegetables and herbs to select from."
+      puts "Or type   all    to see the whole list of vegetables and herbs to select from."
       input = gets.strip
 
       print_vegetable_list(input)
@@ -27,6 +27,10 @@ module Gardening
       puts ""
 
       # "Grab list of vegetables from Vegetable class @@all based on the input and print them in a numbered list"
+      # Print @@all
+
+      #puts "#{Gardening::Vegetable.all}"
+
       puts "1. Radishes"
       puts "2. Rhubarb"
       puts ""

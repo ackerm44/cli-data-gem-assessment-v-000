@@ -5,21 +5,62 @@ module Gardening
 
     @@all = []
 
-    def self.create_vegetables_list(vegetable_list)
-      vegetable_list.each do |vegetable|
-        Vegetable.new(vegetable)
-      end
+    def self.create_vegetables_list(vegetable)
+      self.new(vegetable.css("a strong").text, vegetable.css("a[href*='growing']").attribute('href').value)
     end
 
-    def self.create_vegetable(vegetable_hash)
-      vegetable_hash.each do |key, value|
-        self.send(("#{key}="), value)
-        @@all << self
-      end
+    def initialize(name = nil, url = nil)
+      @name = name
+      @url = url
+      @@all << self
     end
 
     def self.all
       @@all
+    end
+
+    def self.find_by_first_letter(name)
+      first_letter = name[0]
+    end
+
+    def varieties
+      doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]").first.text
+    end
+
+    def intro
+      doc.css("div#ContentColumn div.Liner p").first.text
+    end
+
+    def cold_tolerance
+      doc.css("div#ContentColumn div.Liner div.snapshot ul li[4]").first.text
+    end
+
+    def sun
+      #may not list correctly (sun ommited from some listings)
+      doc.css("div#ContentColumn div.Liner div.snapshot ul li[5]").first.text
+    end
+
+    def soil_ph
+      #fix
+      doc.css(("div#ContentColumn div.Liner div.snapshot ul li[1]")[2]).text
+    end
+
+    def soil_temp
+      doc.css(("div#ContentColumn div.Liner div.snapshot ul li[2]")[2]).text
+    end
+
+    def harvest_time
+      #may not display correctly
+      doc.css("div#ContentColumn div.Liner div.snapshot ul li").last.text
+    end
+
+    def notes
+      #may be including some additional characters that need to be parsed.
+      doc.css("div#ContentColumn div.Liner p")[2].text
+    end
+
+    def doc
+      self.url
     end
 
   end
