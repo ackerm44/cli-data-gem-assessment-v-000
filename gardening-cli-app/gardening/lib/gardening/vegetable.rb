@@ -6,7 +6,7 @@ module Gardening
     @@all = []
 
     def self.create_vegetables_list(vegetable)
-      self.new(vegetable.css("strong").text, "http://www.growinganything.com/growing-artichokes.html")
+      self.new(vegetable.css("strong").text, "http://www.growinganything.com/growing-asparagus.html")
     end
 
     def initialize(name = nil, url = nil)
@@ -58,12 +58,12 @@ module Gardening
 
     def harvest_time
       #may not display correctly
-      doc.css("div#ContentColumn div.Liner div.snapshot h4:contains('Harvesting') ul li").text
+      doc.css("div#ContentColumn div.Liner div.snapshot ul li")[4].text
     end
 
     def notes
       #may be including some additional characters that need to be parsed.
-      doc.css(("div#ContentColumn div.Liner p[3]").text
+      doc.css("div#ContentColumn div.Liner p")[3].text
     end
 
     def doc
