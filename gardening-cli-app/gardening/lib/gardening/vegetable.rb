@@ -26,7 +26,7 @@ module Gardening
     end
 
     def self.find_by_name(name)
-      self.all.detect {|name| vegetable.name == name}
+      self.all.detect {|vegetable|  name == vegetable.name}
     end
 
     def varieties
@@ -66,7 +66,7 @@ module Gardening
     end
 
     def doc
-      self.url
+      Nokogiri::HTML(open(self.url))
     end
 
   end

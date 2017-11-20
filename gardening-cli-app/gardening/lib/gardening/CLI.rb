@@ -19,6 +19,7 @@ module Gardening
       input_two = gets.strip.to_i
 
       selection = @short_list[input_two - 1]
+      puts selection
       vegetable = Gardening::Vegetable.find_by_name(selection)
 
       print_vegetable(vegetable)
@@ -35,13 +36,15 @@ module Gardening
       @short_list = []
       if input == "all"
         Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
-          puts "#{i}. #{vegetable.name} - #{vegetable.url}"
-          @short_list << vegetable
+          puts "#{i}. #{vegetable.name}"
+          @short_list << vegetable.name
         end
+
+        #puts "testing #{@short_list[0}"
       else
         Gardening::Vegetable.find_by_first_letter(input).each.with_index(1) do |vegetable, i|
           puts "#{i}. #{vegetable}"
-          @short_list << vegetable
+          @short_list << vegetable.name
         end
       end
     end
