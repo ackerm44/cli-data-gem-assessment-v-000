@@ -9,9 +9,10 @@ module Gardening
     end
 
     def menu
+      puts ""
       puts "Type the first letter of the vegetable or herb you are looking for more information on."
       puts "Or type   all    to see the whole list of vegetables and herbs to select from."
-      input = gets.strip
+      input = gets.strip.upcase
 
       print_vegetable_list(input)
 
@@ -23,17 +24,29 @@ module Gardening
 
       print_vegetable(vegetable)
 
+      puts ""
+      puts "-------------------------------------------------------------------"
+      puts "Would you like more information on another vegetable? Press Y or N."
+      input_three = gets.strip
+
+      if input_three.upcase == "Y"
+        menu
+      else
+        puts "Thanks for visiting!"
+        exit
+      end
+
     end
 
     def print_vegetable_list(input)
       puts ""
       puts "--------------------"
-      puts "#{(input).upcase} Vegetables"
+      puts "#{input} Vegetables"
       puts "--------------------"
       puts ""
 
       @short_list = []
-      if input == "all"
+      if input == "ALL"
         Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
           puts "#{i}. #{vegetable.name}"
           @short_list << vegetable.name
