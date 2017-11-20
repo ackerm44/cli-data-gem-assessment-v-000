@@ -58,12 +58,12 @@ module Gardening
 
     def harvest_time
       #may not display correctly
-      doc.css("div#ContentColumn div.Liner div.snapshot ul li").text
+      doc.css("div#ContentColumn div.Liner div.snapshot h4:contains('Harvesting') ul li").text
     end
 
     def notes
       #may be including some additional characters that need to be parsed.
-      doc.css("div#ContentColumn div.Liner div:not(.ReminderBoxAds) p")[2].text
+      doc.css(("div#ContentColumn div.Liner p[3]").text
     end
 
     def doc

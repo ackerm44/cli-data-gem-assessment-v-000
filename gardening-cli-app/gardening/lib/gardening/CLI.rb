@@ -81,7 +81,6 @@ module Gardening
       puts "#{vegetable.varieties.strip}"
       puts "#{vegetable.cold_tolerance.strip}"
       puts "#{vegetable.sun.strip}"
-      puts "#{vegetable.soil_ph.strip}"
       puts "#{vegetable.soil_temp.strip}"
       puts "#{vegetable.harvest_time.strip}"
       puts ""
