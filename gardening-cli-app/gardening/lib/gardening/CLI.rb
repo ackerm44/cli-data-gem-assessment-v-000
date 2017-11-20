@@ -16,11 +16,14 @@ module Gardening
 
       print_vegetable_list(input)
 
+      puts ""
       puts "Type the number of the vegetable for more information on that vegetable."
+      #Put in place further testing for invalid input
       input_two = gets.strip.to_i
       if input_two <= @short_list.length
         vegetable = Gardening::Vegetable.find_by_name(@short_list[input_two - 1])
       else
+
         puts "Type the number of the vegetable for more information on that vegetable."
         input_two = gets.strip.to_i
       end
