@@ -74,20 +74,23 @@ module Gardening
 
     def print_vegetable(vegetable)
       puts ""
-      puts "-------------------------#{vegetable.name.upcase}-------------------------"
+      puts "*************#{vegetable.name.upcase}*************"
       puts ""
       puts "#{vegetable.intro}"
       puts ""
+      puts "VARIETIES"
+      puts "---------"
       puts "#{vegetable.varieties.strip}"
       puts ""
+      puts "OPTIMAL GROWING CONDITIONS & INFORMATION"
+      puts "----------------------------------------"
       puts "#{vegetable.cold_tolerance.strip}"
-      puts ""
       puts "#{vegetable.sun.strip}"
-      puts ""
       puts "#{vegetable.soil_temp.strip}"
       puts "#{vegetable.harvest_time.strip}"
       puts ""
-      puts "NOTES:"
+      puts "ADDITIONAL INFORMATION:"
+      puts "------"
       puts "#{vegetable.notes.strip}"
 
     end

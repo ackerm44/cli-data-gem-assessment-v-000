@@ -6,7 +6,7 @@ module Gardening
     @@all = []
 
     def self.create_vegetables_list(vegetable)
-      self.new(vegetable.css("strong").text, "http://www.growinganything.com/growing-asparagus.html")
+      self.new(vegetable.css("strong").text, "http://www.growinganything.com/growing-cabbage.html")
     end
 
     def initialize(name = nil, url = nil)
@@ -42,28 +42,24 @@ module Gardening
     end
 
     def sun
-      #may not list correctly (sun ommited from some listings)
       sun = doc.css("div#ContentColumn div.Liner div.snapshot ul li[5]").first.text
-      # if sun.scan(/"sun"/)
-      #   sun
-      # else
-      #   ""
-      # end
-
     end
 
     def soil_temp
-      doc.css(("div#ContentColumn div.Liner div.snapshot ul li[2]")[2]).text
+      doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]")[1].text
     end
 
     def harvest_time
-      #may not display correctly
-      doc.css("div#ContentColumn div.Liner div.snapshot ul li")[4].text
+      doc.css("div#ContentColumn div.Liner div.snapshot ul li[1]")[4].text
     end
 
     def notes
-      #may be including some additional characters that need to be parsed.
-      doc.css("div#ContentColumn div.Liner p")[3].text
+      notes = doc.css("div#ContentColumn div.Liner p")[3].text
+      if notes.include? "The following resources"
+        notes = doc.css("div#ContentColumn div.Liner p")[4].text
+      else
+        notes
+      end
     end
 
     def doc
