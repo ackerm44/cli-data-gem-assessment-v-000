@@ -12,7 +12,7 @@ module Gardening
     def initialize(name = nil, url = nil)
       @name = name
       @url = url
-      if self.name != ""
+      if self.name != "" && self.name.split.size < 3
         @@all << self
       end
     end
