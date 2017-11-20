@@ -18,9 +18,12 @@ module Gardening
 
       puts "Type the number of the vegetable for more information on that vegetable."
       input_two = gets.strip.to_i
-
-      selection = @short_list[input_two - 1]
-      vegetable = Gardening::Vegetable.find_by_name(selection)
+      if input_two <= @short_list.length
+        vegetable = Gardening::Vegetable.find_by_name(@short_list[input_two - 1])
+      else
+        puts "Type the number of the vegetable for more information on that vegetable."
+        input_two = gets.strip.to_i
+      end
 
       print_vegetable(vegetable)
 
