@@ -39,23 +39,30 @@ module Gardening
     end
 
     def print_vegetable_list(input)
-      puts ""
-      puts "--------------------"
-      puts "#{input} Vegetables"
-      puts "--------------------"
-      puts ""
-
       @short_list = []
       if input == "ALL"
+        puts ""
+        puts "--------------------"
+        puts "#{input} Vegetables"
+        puts "--------------------"
+        puts ""
         Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
           puts "#{i}. #{vegetable.name}"
           @short_list << vegetable.name
         end
-      else
+      elsif input.scan(/[A-Z]/)
+        puts ""
+        puts "--------------------"
+        puts "#{input} Vegetables"
+        puts "--------------------"
+        puts ""
         Gardening::Vegetable.find_by_first_letter(input).each.with_index(1) do |vegetable, i|
           puts "#{i}. #{vegetable.name}"
           @short_list << vegetable.name
         end
+      else
+        puts "Input must be a letter or ALL"
+        menu
       end
     end
 
