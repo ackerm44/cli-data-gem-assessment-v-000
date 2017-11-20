@@ -22,7 +22,7 @@ module Gardening
     end
 
     def self.find_by_first_letter(letter)
-      self.all.select {|vegetable| vegetable.name[0] == letter}
+      self.all.select {|vegetable| letter.upcase == vegetable.name[0]}
     end
 
     def self.find_by_name(name)
