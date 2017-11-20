@@ -14,7 +14,7 @@ module Gardening
     end
 
     def make_vegetables
-      vegetables.each do |vegetable|
+      scrape_vegetable_list_page.each do |vegetable|
         Gardening::Vegetable.create_vegetables_list(vegetable)
       end
     end
@@ -51,5 +51,4 @@ module Gardening
   end
 end
 
-Gardening::Scraper.scrape_vegetable_list_page("http://www.growinganything.com/vegetable-planting-guide.html")
-#Gardening::Scraper.scrape_vegetable_page("http://www.growinganything.com/growing-hops.html")
+#Gardening::Scraper.new.scrape_vegetable_list_page

@@ -6,21 +6,27 @@ module Gardening
     @@all = []
 
     def self.create_vegetables_list(vegetable)
-      self.new(vegetable.css("a strong").text, vegetable.css("a[href*='growing']").attribute('href').value)
+      self.new(vegetable.css("a[href*='growing-'] strong").text, 'http://www.growinganything.com/growing-artichokes.html')
     end
 
     def initialize(name = nil, url = nil)
       @name = name
       @url = url
-      @@all << self
+      if self.name != ""
+        @@all << self
+      end
     end
 
     def self.all
       @@all
     end
 
-    def self.find_by_first_letter(name)
-      first_letter = name[0]
+    def self.find_by_first_letter(letter)
+      self.all.select {|vegetable| vegetable.name[0] == letter}
+    end
+
+    def self.find_by_name(name)
+      self.all.detect {|name| vegetable.name == name}
     end
 
     def varieties

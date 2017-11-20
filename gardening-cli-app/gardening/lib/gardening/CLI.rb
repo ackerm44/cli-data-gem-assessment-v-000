@@ -2,7 +2,7 @@ module Gardening
   class CLI
 
     def welcome
-      Gardening::Scraper.scrape_vegetable_list_page("http://www.growinganything.com/vegetable-planting-guide.html")
+      Gardening::Scraper.new.make_vegetables
       puts "Welcome to the Vegetable and Herb Gardening Information App"
       puts ""
       menu
@@ -17,6 +17,12 @@ module Gardening
 
       puts "Type the number of the vegetable for more information on that vegetable."
       input_two = gets.strip.to_i
+
+      selection = @short_list[input_two - 1]
+      vegetable = Gardening::Vegetable.find_by_name(selection)
+
+      print_vegetable(vegetable)
+
     end
 
     def print_vegetable_list(input)
@@ -26,19 +32,35 @@ module Gardening
       puts "--------------------"
       puts ""
 
-      # "Grab list of vegetables from Vegetable class @@all based on the input and print them in a numbered list"
-      # Print @@all
-
-      #puts "#{Gardening::Vegetable.all}"
-
-      puts "1. Radishes"
-      puts "2. Rhubarb"
-      puts ""
-
+      @short_list = []
+      if input == "all"
+        Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
+          puts "#{i}. #{vegetable.name} - #{vegetable.url}"
+          @short_list << vegetable
+        end
+      else
+        Gardening::Vegetable.find_by_first_letter(input).each.with_index(1) do |vegetable, i|
+          puts "#{i}. #{vegetable}"
+          @short_list << vegetable
+        end
+      end
     end
 
-    def print_vegetable(input_two)
-      #Either have the user type in the name of the vegetable or the index of the vegetable from the list
+    def print_vegetable(vegetable)
+      puts ""
+      puts "***#{vegetable.name.upcase}***"
+      puts ""
+      puts "#{vegetable.intro}"
+      puts ""
+      puts "#{vegetable.varieties.strip}"
+      puts "#{vegetable.cold_tolerance.strip}"
+      puts "#{vegetable.sun.strip}"
+      puts "#{vegetable.soil_ph.strip}"
+      puts "#{vegetable.soil_temp.strip}"
+      puts "#{vegetable.harvest_time.strip}"
+      puts ""
+      puts "#{vegetable.notes.strip}"
+
     end
 
   end
