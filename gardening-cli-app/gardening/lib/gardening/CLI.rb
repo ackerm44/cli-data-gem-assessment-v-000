@@ -3,15 +3,18 @@ module Gardening
 
     def welcome
       Gardening::Scraper.new.make_vegetables
-      puts "Welcome to the Vegetable and Herb Gardening Information App"
       puts ""
+      puts "**************************************************"
+      puts "Welcome to the Vegetable Gardening Information App"
+      puts "**************************************************"
       menu
     end
 
     def menu
       puts ""
-      puts "Type the first letter of the vegetable or herb you are looking for more information on."
-      puts "Or type   all    to see the whole list of vegetables and herbs to select from."
+      puts "- Type the first letter of the vegetable you are looking for more information on."
+      puts "- Or type  ALL  to see the whole list of vegetables to select from."
+      puts ""
       input = gets.strip.upcase
 
       print_vegetable_list(input)
@@ -20,10 +23,10 @@ module Gardening
       puts "Type the number of the vegetable for more information on that vegetable."
       #Put in place further testing for invalid input
       input_two = gets.strip.to_i
+      
       if input_two <= @short_list.length
         vegetable = Gardening::Vegetable.find_by_name(@short_list[input_two - 1])
       else
-
         puts "Type the number of the vegetable for more information on that vegetable."
         input_two = gets.strip.to_i
       end
@@ -39,6 +42,7 @@ module Gardening
         menu
       else
         puts "Thanks for visiting!"
+        puts "**************************************************"
         exit
       end
 
@@ -90,7 +94,7 @@ module Gardening
       puts "#{vegetable.harvest_time.strip}"
       puts ""
       puts "ADDITIONAL INFORMATION:"
-      puts "------"
+      puts "-----------------------"
       puts "#{vegetable.notes.strip}"
 
     end

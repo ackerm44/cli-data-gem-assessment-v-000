@@ -13,7 +13,7 @@ module Gardening
         url = self.get_page.css("div#ContentColumn div.Liner ul li a[href*='growing-']")
 
       # url = url.attribute('href').value
-      binding.pry
+      #binding.pry
     end
 
     def make_vegetables
