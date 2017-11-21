@@ -5,8 +5,9 @@ module Gardening
 
     @@all = []
 
-    def self.create_vegetables_list(vegetable)
-      self.new(vegetable.css("strong").text, "http://www.growinganything.com/growing-cabbage.html")
+    def self.create_vegetables_list(vegetable, url)
+      self.new(vegetable, url)
+
     end
 
     def initialize(name = nil, url = nil)
