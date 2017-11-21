@@ -7,7 +7,6 @@ module Gardening
 
     def self.create_vegetables_list(vegetable, url)
       self.new(vegetable, url)
-
     end
 
     def initialize(name = nil, url = nil)

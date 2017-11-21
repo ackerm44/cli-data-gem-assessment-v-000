@@ -14,11 +14,10 @@ Second to-do list
 1. DONE CLI - utilize user input to print all vegetables or vegetables by letter
 2. DONE CLI - utilize user input to print an individual vegetable
 3. DONE CLI - ask user if they would like to see another vegetable, repeat loop
-4. Scraper - fix vegetable url scraping
+4. DONE Scraper - fix vegetable url scraping
 5. DONE Scraper - edit vegetables that are found under a sub-list
-6. Vegetable - Make sure that attributes are being attributed correctly.  
-7. Vegetable - Look at prior examples to make sure nothing is being missed
-8. Overall - Make sure that all files are linked correctly
+6. Vegetable - Test each vegetable to make sure information is coming in correctly
+7. CLI - Add protection to inputs so that program doesn't error out or exit unexpectedly 
 
 Third to-do list
 1.  Write out instructions of how a user will use

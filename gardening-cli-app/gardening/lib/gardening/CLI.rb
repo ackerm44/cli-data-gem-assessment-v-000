@@ -23,7 +23,7 @@ module Gardening
       puts "Type the number of the vegetable for more information on that vegetable."
       #Put in place further testing for invalid input
       input_two = gets.strip.to_i
-      
+
       if input_two <= @short_list.length
         vegetable = Gardening::Vegetable.find_by_name(@short_list[input_two - 1])
       else
@@ -60,6 +60,11 @@ module Gardening
           puts "#{i}. #{vegetable.name}"
           @short_list << vegetable.name
         end
+      elsif Gardening::Vegetable.find_by_first_letter(input) == []
+        puts ""
+        puts "--There are no vegetables under that letter.--"
+        puts "----------------------------------------------"
+        menu
       elsif input.scan(/[A-Z]/)
         puts ""
         puts "--------------------"
