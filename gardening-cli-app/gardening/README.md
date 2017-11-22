@@ -20,10 +20,10 @@ Second to-do list
 7. DONE CLI - Add protection to inputs so that program doesn't error out or exit unexpectedly
 
 Third to-do list
-1. Watch videos and refactor
-2. Write out instructions of how a user will use
-3. Edit readme to reflect how the user will use
-4. spec.md, check off items
+1. DONE Watch videos and refactor
+2. DONE Write out instructions of how a user will use
+3. DONE Edit readme to reflect how the user will use
+4. DONE spec.md, check off items
 5. Video Demo
 6. Blog post
 
@@ -50,7 +50,7 @@ Or install it yourself as:
 
 ## Usage
 
-To use this gem, run `ruby gardening/bin/gardening`. A menu will appear with instructions on selecting a vegetable to read more information on.  Once you have read the information, you will then be able to select whether you'd like to see more information on another vegetable or exit the program. 
+To use this gem, run `ruby gardening/bin/gardening`. A menu will appear with instructions on selecting a vegetable to read more information on.  Once you have read the information, you will then be able to select whether you'd like to see more information on another vegetable or exit the program.
 
 ## Development
 

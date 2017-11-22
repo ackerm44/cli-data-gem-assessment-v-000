@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Amanda Ackerman'"]
   spec.email         = ["'ackerm44@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{The Gardening app provides instructions and information for growing vegetables at home.}
+  spec.description   = %q{This gem will provide you with instructions and information on growing a variety of vegetables at your own home.  All vegetables listings will provide an overview of the plant, recommended varieties, cold tolerance, required sun, germination soil temperature or planting recommendations, the amount of time until harvest, and additional information on the plant.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
