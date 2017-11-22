@@ -1,33 +1,3 @@
-First to-do list
-1.  DONE Create classes - CLI, scraper, gardening
-2.  DONE Scraper - Access the info for the list of vegetables & herbs
-3.  DONE (but needs more attention) Scraper - Access each individual vegetable and herbs
-4.  DONE (but check that this is working properly) Gardening - Creates instances of each vegetable and put into an @@all array
-5.  DONE bin/console or other - Executable file, Create
-6.  DONE Executable file - require/environment file
-7.  DONE Executable file - calls a new instance of CLI class and runs through start or like method
-8.  DONE CLI - Create a welcome and menu
-
-Second to-do list
-**Screen record**
-**Commit and commit often**
-1. DONE CLI - utilize user input to print all vegetables or vegetables by letter
-2. DONE CLI - utilize user input to print an individual vegetable
-3. DONE CLI - ask user if they would like to see another vegetable, repeat loop
-4. DONE Scraper - fix vegetable url scraping
-5. DONE Scraper - edit vegetables that are found under a sub-list
-6. DONE Vegetable - Test each vegetable to make sure information is coming in correctly
-7. DONE CLI - Add protection to inputs so that program doesn't error out or exit unexpectedly
-
-Third to-do list
-1. DONE Watch videos and refactor
-2. DONE Write out instructions of how a user will use
-3. DONE Edit readme to reflect how the user will use
-4. DONE spec.md, check off items
-5. Video Demo
-6. Blog post
-
-
 # Gardening
 
 Welcome to the Gardening gem.  This gem will provide you with instructions and information on growing a variety of vegetables at your own home.  All vegetables listings will provide an overview of the plant, recommended varieties, cold tolerance, required sun, germination soil temperature or planting recommendations, the amount of time until harvest, and additional information on the plant.  
