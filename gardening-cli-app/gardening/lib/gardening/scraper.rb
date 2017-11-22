@@ -6,6 +6,8 @@ module Gardening
     end
 
     def scrape_vegetable_on_list_page
+      # Due to the nature of the HTML/CSS, vegetable and url data for the list of vegetables had to be scraped
+      # separately and zipped together into an array before the make_vegetables method iterates over the zipped array.
       vegetable = self.get_page.css("div#ContentColumn div.Liner ul li a[href*='growing-'] strong").map {|name| "#{name.text}"}
       url = self.get_page.css("div#ContentColumn div.Liner ul a[href*='growing-']").map { |link| link['href'] }
 

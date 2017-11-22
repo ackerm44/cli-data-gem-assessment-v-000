@@ -11,6 +11,7 @@ module Gardening
     end
 
     def menu
+      # Prints first and secondary lists and asks for user input both times while trying to account for bad input
       puts ""
       puts "- Type the first letter of the vegetable you are looking for more information on."
       puts "- Or type  ALL  to see the whole list of vegetables to select from."
@@ -48,6 +49,7 @@ module Gardening
     end
 
     def print_vegetable_list(input)
+      # Prints out initial list based on users choice of ALL or letter and accounts for possibilities of bad input
       @short_list = []
       if input == "ALL"
         puts ""
@@ -81,6 +83,7 @@ module Gardening
     end
 
     def print_vegetable(vegetable)
+      # Prints out secondary list of an individual vegetable
       puts ""
       puts "*************#{vegetable.name.upcase}*************"
       puts ""
@@ -102,6 +105,5 @@ module Gardening
       puts "#{vegetable.notes.strip}"
 
     end
-
   end
 end

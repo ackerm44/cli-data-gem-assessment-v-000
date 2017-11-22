@@ -10,6 +10,7 @@ module Gardening
     end
 
     def initialize(name = nil, url = nil)
+      # Conditional edits out bad data
       @name = name
       @url = url
       if self.name != "" && self.name.split.size < 3
@@ -22,10 +23,12 @@ module Gardening
     end
 
     def self.find_by_first_letter(letter)
+      # Utilized in the CLI class for the initial selection of searching for a vegetable for the first letter
       self.all.select {|vegetable| letter.upcase == vegetable.name[0]}
     end
 
     def self.find_by_name(name)
+      # Utilized in the CLI class for the secondary selection of searching for the specific vegetable
       self.all.detect {|vegetable|  name == vegetable.name}
     end
 
@@ -54,6 +57,7 @@ module Gardening
     end
 
     def notes
+      # Conditional moves to the next paragraph if scaper is returning an unwanted paragraph 
       notes = doc.css("div#ContentColumn div.Liner p")[3].text
       if notes.include? "The following resources"
         notes = doc.css("div#ContentColumn div.Liner p")[4].text
