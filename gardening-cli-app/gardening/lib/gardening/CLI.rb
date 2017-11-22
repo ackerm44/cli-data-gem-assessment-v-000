@@ -39,6 +39,7 @@ module Gardening
       if play_again.upcase == "Y"
         menu
       else
+        puts "**************************************************"
         puts "Thanks for visiting!"
         puts "**************************************************"
         exit

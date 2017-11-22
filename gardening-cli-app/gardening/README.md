@@ -17,10 +17,10 @@ Second to-do list
 4. DONE Scraper - fix vegetable url scraping
 5. DONE Scraper - edit vegetables that are found under a sub-list
 6. DONE Vegetable - Test each vegetable to make sure information is coming in correctly
-7. DONE CLI - Add protection to inputs so that program doesn't error out or exit unexpectedly 
+7. DONE CLI - Add protection to inputs so that program doesn't error out or exit unexpectedly
 
 Third to-do list
-1. Watch videos and refactor 
+1. Watch videos and refactor
 2. Write out instructions of how a user will use
 3. Edit readme to reflect how the user will use
 4. spec.md, check off items
@@ -30,9 +30,7 @@ Third to-do list
 
 # Gardening
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gardening`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Gardening gem.  This gem will provide you with instructions and information on growing a variety of vegetables at your own home.  All vegetables listings will provide an overview of the plant, recommended varieties, cold tolerance, required sun, germination soil temperature or planting recommendations, the amount of time until harvest, and additional information on the plant.  
 
 ## Installation
 
@@ -52,7 +50,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this gem, run `ruby gardening/bin/gardening`. A menu will appear with instructions on selecting a vegetable to read more information on.  Once you have read the information, you will then be able to select whether you'd like to see more information on another vegetable or exit the program. 
 
 ## Development
 
