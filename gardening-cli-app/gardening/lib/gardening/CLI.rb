@@ -21,22 +21,22 @@ module Gardening
 
       puts ""
       puts "Type the number of the vegetable for more information on that vegetable."
-      input_two = gets.strip.to_i
-      
-      while input_two > @short_list.length || input_two == 0
-        puts "Type the number of the vegetable for more information on that vegetable."
-        input_two = gets.strip.to_i
-      end
-        vegetable = Gardening::Vegetable.find_by_name(@short_list[input_two - 1])
+      short_list_selection = gets.strip.to_i
 
+      while short_list_selection > @short_list.length || short_list_selection == 0
+        puts "Type the number of the vegetable for more information on that vegetable."
+        short_list_selection = gets.strip.to_i
+      end
+
+      vegetable = Gardening::Vegetable.find_by_name(@short_list[short_list_selection - 1])
       print_vegetable(vegetable)
 
       puts ""
       puts "-------------------------------------------------------------------"
       puts "Would you like more information on another vegetable? Press Y or N."
-      input_three = gets.strip
+      play_again = gets.strip
 
-      if input_three.upcase == "Y"
+      if play_again.upcase == "Y"
         menu
       else
         puts "Thanks for visiting!"

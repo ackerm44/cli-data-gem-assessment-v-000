@@ -30,27 +30,27 @@ module Gardening
     end
 
     def intro
-      doc.css("div#ContentColumn div.Liner p").first.text
+      @intro ||= doc.css("div#ContentColumn div.Liner p").first.text
     end
 
     def varieties
-      doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]").first.text
+      @varieties ||= doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]").first.text
     end
 
     def cold_tolerance
-      doc.css("div#ContentColumn div.Liner div.snapshot ul li[4]").first.text
+      @cold_tolerance ||= doc.css("div#ContentColumn div.Liner div.snapshot ul li[4]").first.text
     end
 
     def sun
-      sun = doc.css("div#ContentColumn div.Liner div.snapshot ul li[5]").first.text
+      @sun ||= sun = doc.css("div#ContentColumn div.Liner div.snapshot ul li[5]").first.text
     end
 
     def soil_temp
-      doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]")[1].text
+      @soil_temp ||= doc.css("div#ContentColumn div.Liner div.snapshot ul li[3]")[1].text
     end
 
     def harvest_time
-      doc.css("div#ContentColumn div.Liner div.snapshot ul li[1]")[4].text
+      @harvest_time ||= doc.css("div#ContentColumn div.Liner div.snapshot ul li[1]")[4].text
     end
 
     def notes
@@ -63,7 +63,7 @@ module Gardening
     end
 
     def doc
-      Nokogiri::HTML(open(self.url))
+      @doc ||= Nokogiri::HTML(open(self.url))
     end
 
   end

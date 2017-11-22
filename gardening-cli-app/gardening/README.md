@@ -16,15 +16,16 @@ Second to-do list
 3. DONE CLI - ask user if they would like to see another vegetable, repeat loop
 4. DONE Scraper - fix vegetable url scraping
 5. DONE Scraper - edit vegetables that are found under a sub-list
-6. Vegetable - Test each vegetable to make sure information is coming in correctly
-7. CLI - Add protection to inputs so that program doesn't error out or exit unexpectedly 
+6. DONE Vegetable - Test each vegetable to make sure information is coming in correctly
+7. DONE CLI - Add protection to inputs so that program doesn't error out or exit unexpectedly 
 
 Third to-do list
-1.  Write out instructions of how a user will use
-2.  Edit readme to reflect how the user will use
-3   spec.md, check off items
-4.  Video Demo
-5.  Blog post
+1. Watch videos and refactor 
+2. Write out instructions of how a user will use
+3. Edit readme to reflect how the user will use
+4. spec.md, check off items
+5. Video Demo
+6. Blog post
 
 
 # Gardening
