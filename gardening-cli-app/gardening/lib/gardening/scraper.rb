@@ -14,7 +14,7 @@ module Gardening
       vegetable.zip url
     end
 
-    def make_vegetables
+    def self.make_vegetables
       scrape_vegetable_on_list_page.each do |vegetable, url|
         Gardening::Vegetable.create_vegetables_list(vegetable, url)
       end
