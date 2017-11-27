@@ -2,7 +2,7 @@ module Gardening
   class CLI
 
     def welcome
-      Gardening::Scraper.new.make_vegetables
+      Gardening::Scraper.make_vegetables
       puts ""
       puts "**************************************************"
       puts "Welcome to the Vegetable Gardening Information App"
