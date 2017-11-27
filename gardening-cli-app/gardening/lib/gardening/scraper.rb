@@ -1,7 +1,7 @@
 module Gardening
   class Scraper
 
-    def get_page
+    def self.get_page
       doc = Nokogiri::HTML(open("http://www.growinganything.com/vegetable-planting-guide.html"))
     end
 
