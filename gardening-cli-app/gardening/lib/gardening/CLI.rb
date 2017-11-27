@@ -15,6 +15,7 @@ module Gardening
       puts ""
       puts "- Type the first letter of the vegetable you are looking for more information on."
       puts "- Or type  ALL  to see the whole list of vegetables to select from."
+      puts "- Or type 10 to see the first ten vegetables."
       puts ""
       input = gets.strip.upcase
 
