@@ -68,7 +68,7 @@ module Gardening
         puts "First #{input} Vegetables"
         puts "--------------------"
         puts ""
-        i = 1
+        counter = 1
         while counter <= 10
           Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
             puts "#{i}. #{vegetable.name}"
