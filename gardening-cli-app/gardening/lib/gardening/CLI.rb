@@ -62,19 +62,18 @@ module Gardening
           puts "#{i}. #{vegetable.name}"
           @short_list << vegetable.name
         end
-      elseif input == "10"
-      puts ""
-      puts "--------------------"
-      puts "First #{input} Vegetables"
-      puts "--------------------"
-      puts ""
-      i = 1
-      while counter <= 10
-        Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
-        puts "#{i}. #{vegetable.name}"
-        counter += 1
-      end
-        
+      elsif input == "10"
+        puts ""
+        puts "--------------------"
+        puts "First #{input} Vegetables"
+        puts "--------------------"
+        puts ""
+        i = 1
+        while counter <= 10
+          Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
+          puts "#{i}. #{vegetable.name}"
+          counter += 1
+        end
       elsif Gardening::Vegetable.find_by_first_letter(input) == []
         puts ""
         puts "--There are no vegetables under that letter.--"
