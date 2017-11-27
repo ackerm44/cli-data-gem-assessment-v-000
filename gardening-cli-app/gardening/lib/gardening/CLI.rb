@@ -71,8 +71,9 @@ module Gardening
         i = 1
         while counter <= 10
           Gardening::Vegetable.all.each.with_index(1) do |vegetable, i|
-          puts "#{i}. #{vegetable.name}"
-          counter += 1
+            puts "#{i}. #{vegetable.name}"
+            counter += 1
+          end
         end
       elsif Gardening::Vegetable.find_by_first_letter(input) == []
         puts ""
